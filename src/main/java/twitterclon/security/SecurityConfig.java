@@ -15,6 +15,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import twitterclon.security.jwt.JwtAuthenticationEntryPoint;
+import twitterclon.security.jwt.JwtAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -22,8 +24,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableMethodSecurity
 public class SecurityConfig {
     private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
-    private final CustomUserDetailsService customUserDetailsService;
-    private final JwtGenerator jwtGenerator;
+    private final JwtAuthenticationFilter jwtAuthenticationFilter;
 
     @Bean
     AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
@@ -33,12 +34,6 @@ public class SecurityConfig {
     @Bean
     PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
-    }
-
-    @Bean
-    public JwtAuthenticationFilter jwtAuthenticationFilter() {
-        return new JwtAuthenticationFilter(customUserDetailsService,
-                                           jwtGenerator);
     }
 
     @Bean
@@ -56,7 +51,7 @@ public class SecurityConfig {
                     .anyRequest()
                     .authenticated())
             .httpBasic(Customizer.withDefaults());
-        http.addFilterBefore(jwtAuthenticationFilter(),
+        http.addFilterBefore(jwtAuthenticationFilter,
                              UsernamePasswordAuthenticationFilter.class);
         return http.build();
 

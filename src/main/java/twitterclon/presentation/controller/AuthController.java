@@ -20,7 +20,7 @@ import twitterclon.domain.entity.RoleEntity;
 import twitterclon.domain.entity.UserEntity;
 import twitterclon.persistence.RoleRepository;
 import twitterclon.persistence.UserRepository;
-import twitterclon.security.JwtGenerator;
+import twitterclon.security.jwt.JwtGenerator;
 
 import java.util.Collections;
 import java.util.Optional;

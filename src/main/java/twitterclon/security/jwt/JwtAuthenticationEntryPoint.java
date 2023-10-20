@@ -1,4 +1,4 @@
-package twitterclon.security;
+package twitterclon.security.jwt;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
