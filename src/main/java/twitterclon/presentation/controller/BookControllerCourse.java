@@ -21,7 +21,7 @@ import java.util.logging.Logger;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/books")
+@RequestMapping("/api/books")
 @Validated
 @Tag(name = "BookController",
      description = "BookController management APIs")
