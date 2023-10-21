@@ -4,7 +4,7 @@ import twitterclon.domain.entity.BookEntity;
 
 import java.util.List;
 
-public interface IBookService {
+public interface BookService {
     List<BookEntity> findAll();
     BookEntity findById(Long id);
     BookEntity create(BookEntity bookEntity);

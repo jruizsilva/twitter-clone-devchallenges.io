@@ -1,11 +1,11 @@
 package twitterclon.business.facade;
 
-import twitterclon.domain.dto.BookDto;
-import twitterclon.domain.dto.request.BookRequest;
+import twitterclon.domain.dto.book.BookDto;
+import twitterclon.domain.dto.book.request.BookRequest;
 
 import java.util.List;
 
-public interface IBookFacade {
+public interface BookFacade {
     List<BookDto> findAll();
     BookDto findById(Long id);
     BookDto create(BookRequest bookRequest);

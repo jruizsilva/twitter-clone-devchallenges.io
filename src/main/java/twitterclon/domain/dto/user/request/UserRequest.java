@@ -1,4 +1,4 @@
-package twitterclon.domain.dto;
+package twitterclon.domain.dto.user.request;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
@@ -6,15 +6,15 @@ import org.hibernate.validator.constraints.Length;
 
 @Getter
 @Setter
-@AllArgsConstructor
+@ToString
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class RegisterUserDto {
+public class UserRequest {
     @NotBlank
     @Length(min = 4)
     private String username;
     @NotBlank
     @Length(min = 4)
     private String password;
-
 }

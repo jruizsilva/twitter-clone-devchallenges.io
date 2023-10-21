@@ -2,7 +2,7 @@ package twitterclon.business.mapper.book;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
-import twitterclon.domain.dto.BookDto;
+import twitterclon.domain.dto.book.BookDto;
 import twitterclon.domain.entity.BookEntity;
 
 import java.util.List;

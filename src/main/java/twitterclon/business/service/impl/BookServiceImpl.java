@@ -4,7 +4,7 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import twitterclon.business.service.IBookService;
+import twitterclon.business.service.BookService;
 import twitterclon.common.exception.BookException;
 import twitterclon.common.util.constants.BookConstants;
 import twitterclon.domain.entity.BookEntity;
@@ -16,7 +16,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Service
 @Transactional
-public class IBookServiceImpl implements IBookService {
+public class BookServiceImpl implements BookService {
     private final IBookRepository iBookRepository;
 
     @Override

@@ -1,8 +1,5 @@
-package twitterclon.domain.dto.request;
+package twitterclon.domain.dto.book;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.PastOrPresent;
-import jakarta.validation.constraints.Positive;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -13,16 +10,12 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class BookRequest {
-    @NotBlank
+public class BookDto {
+    private Long id;
     private String title;
-    @NotBlank
     private String author;
-    @PastOrPresent
     private LocalDate releaseDate;
-    @Positive
     private Integer pages;
-    @Positive
     private Double price;
     private Boolean online;
 }

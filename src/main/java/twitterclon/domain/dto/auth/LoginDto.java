@@ -1,15 +1,15 @@
-package twitterclon.domain.dto;
+package twitterclon.domain.dto.auth;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class AuthResponseDto {
+public class LoginDto {
     private String accessToken;
     private String tokenType;
 
-    public AuthResponseDto(String accessToken) {
+    public LoginDto(String accessToken) {
         this.accessToken = accessToken;
         this.tokenType = "Bearer ";
     }
