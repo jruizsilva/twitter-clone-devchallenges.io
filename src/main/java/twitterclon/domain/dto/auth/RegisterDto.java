@@ -1,8 +1,12 @@
 package twitterclon.domain.dto.auth;
 
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@RequiredArgsConstructor
+@Getter
+@Setter
+@AllArgsConstructor
 public class RegisterDto {
-    private final String message;
+    private String message;
 }

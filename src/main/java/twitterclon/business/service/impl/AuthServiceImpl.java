@@ -1,5 +1,6 @@
 package twitterclon.business.service.impl;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -7,6 +8,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 import twitterclon.business.service.AuthService;
 import twitterclon.common.exception.AuthException;
 import twitterclon.common.util.constants.AuthConstants;
@@ -21,6 +23,8 @@ import java.util.Collections;
 import java.util.Optional;
 
 @RequiredArgsConstructor
+@Service
+@Transactional
 public class AuthServiceImpl implements AuthService {
     private final AuthenticationManager authenticationManager;
     private final PasswordEncoder passwordEncoder;
@@ -48,8 +52,7 @@ public class AuthServiceImpl implements AuthService {
         }
         RoleEntity roleEntity = roleEntityOptional.get();
         userEntity.setRoles(Collections.singletonList(roleEntity));
-        userRepository.save(userEntity);
-        return userEntity;
+        return userRepository.save(userEntity);
     }
 
     @Override
@@ -72,8 +75,7 @@ public class AuthServiceImpl implements AuthService {
         }
         RoleEntity roleEntity = roleEntityOptional.get();
         userEntity.setRoles(Collections.singletonList(roleEntity));
-        userRepository.save(userEntity);
-        return userEntity;
+        return userRepository.save(userEntity);
     }
 
     @Override
