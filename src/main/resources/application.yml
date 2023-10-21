@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: dev
+    active: prod
   main:
     banner-mode: 'off'
   output:
@@ -23,12 +23,12 @@ spring:
 spring:
   config:
     activate:
-      on-profile: qa
+      on-profile: prod
   datasource:
-    password: admin
-    url: jdbc:postgresql://localhost:5432/twitter_clon_db
-    username: postgres
+    password: jW5TaMmpXP8b
+    url: jdbc:postgresql://ep-jolly-bird-930208.us-east-2.aws.neon.tech/twitter-clon
+    username: ruizsilvajonathan
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
     show-sql: true
